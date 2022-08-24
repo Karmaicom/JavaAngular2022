@@ -2,6 +2,8 @@ package repositories;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import entities.ArquivoExportado;
 import entities.Cliente;
@@ -10,7 +12,9 @@ public class ClienteRepository {
 
 	public ArquivoExportado exportarDados(Cliente cliente) throws Exception{
 	
-		File file = new File("c:\\temp\\cliente.txt");
+		String data = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
+		
+		File file = new File("c:\\temp\\cliente"+data+".txt");
 		PrintWriter printWriter = new PrintWriter(file);
 		PrintWriter print = printWriter;
 		

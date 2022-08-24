@@ -1,5 +1,7 @@
 package principal;
 
+import java.util.UUID;
+
 import javax.swing.JOptionPane;
 
 import entities.ArquivoExportado;
@@ -16,7 +18,7 @@ public class Program {
 		ClienteRepository repo = new ClienteRepository();
 		
 		try {
-			cliente.setIdCliente(Integer.valueOf(JOptionPane.showInputDialog("Informe o Id do Cliente")));
+			cliente.setIdCliente(UUID.randomUUID());
 			cliente.setNome(JOptionPane.showInputDialog("Informe o nome do Cliente"));
 			cliente.setEmail(JOptionPane.showInputDialog("Informe o email do Cliente"));
 			cliente.setCpf(JOptionPane.showInputDialog("Informe o cpf do Cliente"));
